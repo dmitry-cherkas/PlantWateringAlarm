@@ -1,0 +1,23 @@
+{
+    "configurations": [
+        {
+            "name": "AVR-GCC",
+            "includePath": [
+                "${workspaceFolder}/**",
+                "C:/dev_IoT/WinAVR-20100110/avr/include",
+                "C:/dev_IoT/WinAVR-20100110/lib/gcc/avr/4.3.3/include"
+            ],
+            "defines": [
+                "_DEBUG",
+                "UNICODE",
+                "_UNICODE",
+                "__AVR_ATtiny44__"
+            ],
+            "compilerPath": "C:/dev_IoT/WinAVR-20100110/bin/avr-gcc.exe",
+            "cStandard": "c99",
+            "cppStandard": "c++98",
+            "intelliSenseMode": "gcc-x86"
+        }
+    ],
+    "version": 4
+}

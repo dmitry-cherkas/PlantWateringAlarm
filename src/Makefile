@@ -11,7 +11,7 @@ DEVICE  = attiny44
 F_CPU   = 1000000	# in Hz
 FUSE_L  = 0xE2# see below for fuse values for particular devices
 FUSE_H  = 0xDE
-AVRDUDE = avrdude -c usbasp -P usb -p $(DEVICE) # edit this line for your programmer
+AVRDUDE = avrdude -c avrisp -b 19200 -P COM3 -p $(DEVICE) # edit this line for your programmer
 
 CFLAGS  = -Iusbdrv -I. -DDEBUG_LEVEL=0  -Os 
 CFLAGS += -ffunction-sections -fdata-sections -save-temps 
@@ -126,7 +126,7 @@ flash: main.hex
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
-	rm -f main.hex main.lst main.obj main.cof main.list main.map main.eep.hex main.elf *.o main.s
+	rm -f main.hex main.lst main.obj main.cof main.list main.map main.eep.hex main.elf *.o *.s *.i
 
 # Generic rule for compiling C files:
 .c.o:
