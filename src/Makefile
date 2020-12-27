@@ -19,7 +19,7 @@ LDFLAGS += -Wl,--gc-sections,--relax
 
 OBJECTS = main.o usiTwiSlave.o
 
-COMPILE = avr-gcc -DF_CPU=$(F_CPU) $(CFLAGS) $(LDFLAGS) -mmcu=$(DEVICE)  
+COMPILE = avr-gcc -fgnu89-inline -DF_CPU=$(F_CPU) $(CFLAGS) $(LDFLAGS) -mmcu=$(DEVICE)  
 
 ##############################################################################
 # Fuse values for particular devices
@@ -122,7 +122,7 @@ fuse:
 
 # rule for uploading firmware:
 flash: main.hex
-	$(AVRDUDE) -U flash:w:main.hex:i
+	$(AVRDUDE) -e -U flash:w:main.hex:i
 
 # rule for deleting dependent files (those which can be built by Make):
 clean:
